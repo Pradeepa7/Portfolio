@@ -1,0 +1,313 @@
+/* Importing Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Global styles */
+* {
+    padding: 0;
+    margin: 0;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Prevent horizontal scroll caused by animations or wide elements */
+body {
+  overflow-x: hidden;
+}
+
+
+/* Styling for <i> tags used as icons */
+i {
+    display: inline-block;
+    border: solid aqua;
+    border-radius: 50px;
+    padding: 4px 8px;
+    color: aqua;
+}
+
+i:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 22px aqua;
+    color: aqua;
+}
+
+/* Button hover effect for CV download */
+.btn-download-cv:hover {
+    background-color: #00e6e6;
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
+    color: black;
+}
+
+/* Navbar link styling */
+.nav-link {
+    color: white;
+    transition: color 0.3s ease, text-underline-offset 0.3s ease;
+}
+
+.nav-link:hover {
+    color: aqua;
+    text-decoration: underline;
+    text-underline-offset: 7px;
+    cursor: pointer;
+}
+
+/* Image wrapper animation on home page */
+.homeImgWrapper {
+    margin-inline: auto 2rem;
+    position: relative;
+}
+
+.homeImgWrapper::before,
+.homeImgWrapper::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+}
+
+/* White background animation */
+.homeImgWrapper::before {
+    background-color: white;
+    animation: animate__before 8s ease-in-out infinite;
+}
+
+/* Aqua animated blob behind image */
+.homeImgWrapper::after,
+.homeImg {
+    background-color: aqua;
+    animation: animate__after 8s ease-in-out infinite;
+}
+
+.homeImg {
+    z-index: 10;
+    position: relative;
+    vertical-align: middle;
+}
+
+/* Keyframes for blob animation */
+@keyframes animate__before {
+    0% {
+        border-radius: 65% 35% 29% 71% / 55% 30% 70% 45%;
+    }
+    50% {
+        border-radius: 21% 79% 50% 50% / 21% 50% 50% 79%;
+    }
+    100% {
+        border-radius: 65% 35% 29% 71% / 55% 30% 70% 45%;
+    }
+}
+
+@keyframes animate__after {
+    0% {
+        border-radius: 21% 79% 50% 50% / 21% 50% 50% 79%;
+    }
+    50% {
+        border-radius: 65% 35% 29% 71% / 55% 30% 70% 45%;
+    }
+    100% {
+        border-radius: 21% 79% 50% 50% / 21% 50% 50% 79%;
+    }
+}
+
+/* Hover border for about section */
+.about-hover:hover {
+    border: solid 1px aqua;
+    cursor: pointer;
+}
+
+/* Project card styles */
+.project-card {
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out !important;
+    will-change: transform;
+    cursor: pointer;
+}
+
+/* Image scaling on hover */
+.card-img-wrapper {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s ease;
+}
+
+.project-card:hover .card-img-wrapper {
+    transform: scale(1.05);
+}
+
+/* Image settings */
+.card-img-top {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+/* Overlay icons for project cards */
+.overlay-icons {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.5rem;
+    display: flex;
+    gap: 0.5rem;
+    z-index: 2;
+}
+
+/* Overlay icon styles */
+.overlay-icons a {
+    color: #ffffff;
+    font-size: 1.6rem;
+    transition: color 0.3s ease;
+}
+
+.overlay-icons a:hover {
+    color: #0d6efd;
+}
+
+/* Tech icons used in project cards */
+.tech-icon-group {
+    display: inline-flex;
+    background-color: black;
+    gap: 10px;
+    padding: 4px 12px;
+    border-radius: 999px;
+}
+
+/* Project links like Demo / Code */
+.project-links {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+.project-links a {
+    color: white;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.project-links a:hover {
+    color: aqua;
+    transform: translateY(-2px);
+}
+
+/* Glowing effect for hovered icons */
+.project-links svg:hover {
+    filter: drop-shadow(0 0 5px aqua);
+}
+
+/* Rotated arrow icon style */
+.rotated-icon {
+    transform: rotate(-45deg);
+    transition: transform 0.3s ease;
+}
+
+/* GitHub icon on project card */
+.github-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #111;
+    color: white;
+    padding: 6px;
+    border-radius: 50%;
+    z-index: 2;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.github-icon:hover {
+    background-color: #00e6e6;
+    color: #000;
+    box-shadow: 0 0 22px rgba(0, 255, 255, 0.5);
+    transform: scale(1.1);
+}
+
+/* Input fields in form */
+.form-control {
+    background-color: lightgray;
+}
+
+/* Send message button hover effect */
+.btn-send-msg :hover {
+    background-color: #00e6e6;
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
+    color: black;
+}
+
+/* Scroll to top button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.scroll-to-top:hover {
+    transform: translateY(-8px);
+}
+
+/* Scroll mouse icon animation */
+.mouse-icon {
+    width: 32px;
+    height: 52px;
+    border: 2px solid aqua;
+    border-radius: 20px;
+    position: relative;
+    margin: 0 auto;
+    cursor: pointer;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.mouse-dot {
+    width: 5px;
+    height: 5px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: dotBounce 1.5s infinite;
+}
+
+/* Animation for dot inside mouse icon */
+@keyframes dotBounce {
+    0%, 100% {
+        top: 10px;
+    }
+    50% {
+        top: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+  .vertical-timeline-element-content ul li:nth-child(n + 3) {
+    display: none; /* Hide all bullet points after the 2nd one */
+  }
+
+  .vertical-timeline-element-content ul li {
+    font-size: 13px; /* Make text smaller on mobile */
+    line-height: 1.4;
+  }
+
+  .vertical-timeline-element-content ul {
+    padding-left: 18px; /* Reduce left spacing on mobile */
+    margin-bottom: 0;
+  }
+}
