@@ -1,7 +1,7 @@
 /* Importing Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-/* Global styles */
+/* Global styles for all elements */
 * {
     padding: 0;
     margin: 0;
@@ -9,13 +9,32 @@
     font-family: 'Poppins', sans-serif;
 }
 
-/* Prevent horizontal scroll caused by animations or wide elements */
-body {
-  overflow-x: hidden;
+/* Basic settings for html and body */
+html, body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;  /* ✅ Prevent horizontal scroll */
+  scroll-behavior: smooth;
+  position: relative;
 }
 
+/* Mobile-specific padding for home section to prevent overlap with navbar */
+@media (max-width: 768px) {
+  #home {
+    padding-top: 60px; /* Adjust to your navbar height */
+  }
+}
 
-/* Styling for <i> tags used as icons */
+/* Desktop-specific padding for home section */
+@media (min-width: 769px) {
+  #home {
+    padding-top: 70px;
+  }
+}
+
+/* Styling for all <i> icon elements */
 i {
     display: inline-block;
     border: solid aqua;
@@ -24,13 +43,14 @@ i {
     color: aqua;
 }
 
+/* Icon hover effect */
 i:hover {
     transform: scale(1.1);
     box-shadow: 0 0 22px aqua;
     color: aqua;
 }
 
-/* Button hover effect for CV download */
+/* Hover effect for CV download button */
 .btn-download-cv:hover {
     background-color: #00e6e6;
     transform: scale(1.05);
@@ -44,6 +64,7 @@ i:hover {
     transition: color 0.3s ease, text-underline-offset 0.3s ease;
 }
 
+/* Navbar link hover effect */
 .nav-link:hover {
     color: aqua;
     text-decoration: underline;
@@ -51,12 +72,23 @@ i:hover {
     cursor: pointer;
 }
 
-/* Image wrapper animation on home page */
+/* Wrapper for home image */
 .homeImgWrapper {
-    margin-inline: auto 2rem;
-    position: relative;
+  margin-inline: auto 2rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+/* Remove extra right margin in mobile */
+@media (max-width: 768px) {
+  .homeImgWrapper {
+    margin-inline: auto;
+  }
+}
+
+/* Adding layers for animation */
 .homeImgWrapper::before,
 .homeImgWrapper::after {
     content: '';
@@ -64,26 +96,27 @@ i:hover {
     inset: 0;
 }
 
-/* White background animation */
+/* Background layer animation - white blob */
 .homeImgWrapper::before {
     background-color: white;
     animation: animate__before 8s ease-in-out infinite;
 }
 
-/* Aqua animated blob behind image */
+/* Background layer animation - aqua blob */
 .homeImgWrapper::after,
 .homeImg {
     background-color: aqua;
     animation: animate__after 8s ease-in-out infinite;
 }
 
+/* Home image styling */
 .homeImg {
     z-index: 10;
     position: relative;
     vertical-align: middle;
 }
 
-/* Keyframes for blob animation */
+/* Keyframe animation for first blob */
 @keyframes animate__before {
     0% {
         border-radius: 65% 35% 29% 71% / 55% 30% 70% 45%;
@@ -96,6 +129,7 @@ i:hover {
     }
 }
 
+/* Keyframe animation for second blob */
 @keyframes animate__after {
     0% {
         border-radius: 21% 79% 50% 50% / 21% 50% 50% 79%;
@@ -108,13 +142,13 @@ i:hover {
     }
 }
 
-/* Hover border for about section */
+/* Hover border effect for about section cards */
 .about-hover:hover {
     border: solid 1px aqua;
     cursor: pointer;
 }
 
-/* Project card styles */
+/* Styles for project cards */
 .project-card {
     border-radius: 1rem;
     overflow: hidden;
@@ -123,18 +157,19 @@ i:hover {
     cursor: pointer;
 }
 
-/* Image scaling on hover */
+/* Image wrapper inside project card with hover scaling */
 .card-img-wrapper {
     position: relative;
     overflow: hidden;
     transition: transform 0.4s ease;
 }
 
+/* On hover, image scales up slightly */
 .project-card:hover .card-img-wrapper {
     transform: scale(1.05);
 }
 
-/* Image settings */
+/* Project card image styling */
 .card-img-top {
     width: 100%;
     height: auto;
@@ -143,7 +178,7 @@ i:hover {
     transition: transform 0.4s ease;
 }
 
-/* Overlay icons for project cards */
+/* Overlay icons in project cards (top-right corner) */
 .overlay-icons {
     position: absolute;
     top: 0;
@@ -154,18 +189,19 @@ i:hover {
     z-index: 2;
 }
 
-/* Overlay icon styles */
+/* Styling individual overlay icons */
 .overlay-icons a {
     color: #ffffff;
     font-size: 1.6rem;
     transition: color 0.3s ease;
 }
 
+/* Hover effect for overlay icons */
 .overlay-icons a:hover {
     color: #0d6efd;
 }
 
-/* Tech icons used in project cards */
+/* Tech stack icons in project cards */
 .tech-icon-group {
     display: inline-flex;
     background-color: black;
@@ -174,7 +210,7 @@ i:hover {
     border-radius: 999px;
 }
 
-/* Project links like Demo / Code */
+/* Links to demo or code in projects */
 .project-links {
     display: flex;
     align-items: center;
@@ -183,6 +219,7 @@ i:hover {
     transition: transform 0.3s ease-in-out;
 }
 
+/* Individual link styles */
 .project-links a {
     color: white;
     font-weight: 500;
@@ -193,23 +230,24 @@ i:hover {
     transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
+/* Hover effect for project links */
 .project-links a:hover {
     color: aqua;
     transform: translateY(-2px);
 }
 
-/* Glowing effect for hovered icons */
+/* Glowing SVG icon on hover */
 .project-links svg:hover {
     filter: drop-shadow(0 0 5px aqua);
 }
 
-/* Rotated arrow icon style */
+/* Rotated arrow icon */
 .rotated-icon {
     transform: rotate(-45deg);
     transition: transform 0.3s ease;
 }
 
-/* GitHub icon on project card */
+/* GitHub icon on project card (top right) */
 .github-icon {
     position: absolute;
     top: 10px;
@@ -223,6 +261,7 @@ i:hover {
     transition: all 0.3s ease;
 }
 
+/* Hover effect for GitHub icon */
 .github-icon:hover {
     background-color: #00e6e6;
     color: #000;
@@ -230,12 +269,12 @@ i:hover {
     transform: scale(1.1);
 }
 
-/* Input fields in form */
+/* Input field background in contact form */
 .form-control {
     background-color: lightgray;
 }
 
-/* Send message button hover effect */
+/* Hover effect for "Send Message" button */
 .btn-send-msg :hover {
     background-color: #00e6e6;
     transform: scale(1.05);
@@ -243,7 +282,7 @@ i:hover {
     color: black;
 }
 
-/* Scroll to top button */
+/* Scroll-to-top button styles */
 .scroll-to-top {
     position: fixed;
     bottom: 30px;
@@ -258,11 +297,12 @@ i:hover {
     transition: transform 0.3s ease;
 }
 
+/* Hover effect for scroll-to-top button */
 .scroll-to-top:hover {
     transform: translateY(-8px);
 }
 
-/* Scroll mouse icon animation */
+/* Scroll mouse icon design */
 .mouse-icon {
     width: 32px;
     height: 52px;
@@ -274,6 +314,7 @@ i:hover {
     box-shadow: 0 0 8px rgba(0,0,0,0.1);
 }
 
+/* Dot inside the mouse icon */
 .mouse-dot {
     width: 5px;
     height: 5px;
@@ -286,7 +327,7 @@ i:hover {
     animation: dotBounce 1.5s infinite;
 }
 
-/* Animation for dot inside mouse icon */
+/* Dot bounce animation */
 @keyframes dotBounce {
     0%, 100% {
         top: 10px;
@@ -296,11 +337,14 @@ i:hover {
     }
 }
 
+/* Mobile-specific settings for vertical timeline */
 @media (max-width: 768px) {
-  .vertical-timeline-element-content ul li:nth-child(n + 3) {
+  /* Hide list items after 3rd in vertical timeline */
+  .vertical-timeline-element-content ul li:nth-child(n + 4) {
     display: none; /* Hide all bullet points after the 2nd one */
   }
 
+  /* Adjust font size and spacing for mobile */
   .vertical-timeline-element-content ul li {
     font-size: 13px; /* Make text smaller on mobile */
     line-height: 1.4;

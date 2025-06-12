@@ -113,7 +113,7 @@ const Home = () => {
         </div>
 
         {/* Column 2: Profile image with animation */}
-        <div className="col-md-6 order-1 order-md-2 text-center mb-4 mb-md-0 ms-2 ms-md-0 mt-3 mt-md-0">
+        <div className="col-md-6 order-1 order-md-2 text-center mb-4 mb-md-0 mt-3 mt-md-0">
           <TrackVisibility partialVisibility>
             {({ isVisible }) => (
               <div

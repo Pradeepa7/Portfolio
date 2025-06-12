@@ -86,7 +86,7 @@ const Projects = () => {
                 >
                   <div
                     className={`card project-card position-relative  ${
-                      isVisible ? "animate__animated animate__fadeInUp" : ""
+                      isVisible ? "animate__animated animate__fadeInLeft" : ""
                     }`}
                   >
                     {/* GitHub icon top-right */}

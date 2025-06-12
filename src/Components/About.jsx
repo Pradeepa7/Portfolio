@@ -46,7 +46,7 @@ const About = () => {
         {({ isVisible }) => (
           <p
             className={`text-light ${
-              isVisible ? "animate__animated animate__fadeInRight" : ""
+              isVisible ? "animate__animated animate__fadeInLeft" : ""
             }`}
           >
             Passionate MERN Stack Developer skilled in building responsive web apps with MongoDB, Express.js, React, and Node.js. Focused on clean code, real-world solutions, and continuous learning through hands-on projects.
