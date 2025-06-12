@@ -339,10 +339,6 @@ i:hover {
 
 /* Mobile-specific settings for vertical timeline */
 @media (max-width: 768px) {
-  /* Hide list items after 3rd in vertical timeline */
-  .vertical-timeline-element-content ul li:nth-child(n + 4) {
-    display: none; /* Hide all bullet points after the 2nd one */
-  }
 
   /* Adjust font size and spacing for mobile */
   .vertical-timeline-element-content ul li {
